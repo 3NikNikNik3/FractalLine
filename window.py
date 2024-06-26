@@ -11,7 +11,15 @@ class Drawer:
         pygame.draw.line(self.screen, color, (s.x, s.y), (e.x, e.y), r)
 
 
-def main(frac: Fractal, size, move: float):
+def get_float(argv) -> float:
+    if len(argv) < 6 or not argv[5].replace('.', '', 1).isdigit():
+        return 0
+    return float(argv[5])
+
+
+def main(frac: Fractal, size, arg: list[int]):
+    move = get_float(arg)
+
     pygame.init()
 
     screen = pygame.display.set_mode(size)

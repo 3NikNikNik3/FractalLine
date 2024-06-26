@@ -11,12 +11,6 @@ def get_size_window(argv):
     return int(argv[2]), int(argv[3])
 
 
-def get_time(argv) -> float:
-    if len(argv) < 6 or not argv[5].replace('.', '', 1).isdigit():
-        return 0
-    return float(argv[5])
-
-
 def main():
     if len(sys.argv) >= 2:
         frac = Fractal()
@@ -25,9 +19,11 @@ def main():
 1) main.py help
 2) main.py path:str
     test load setting.json
-3) main.py path:str sizeX:int sizeY:int mod:str par:int/float
-    mod: window - see fractal on every iter (par - second move or 0)
-         screenshot - make screenshot on <par> iter''')
+3) main.py path:str sizeX:int sizeY:int mod:str ...
+    mod: window - see fractal on every iter
+            par:float(second move or 0)
+         screenshot - make screenshot on <par> iter with name <name>
+            par:int name:str''')
         elif os.path.exists(sys.argv[1]):
             try:
                 ans = frac.load(sys.argv[1], get_size_window(sys.argv))
@@ -37,7 +33,7 @@ def main():
             if ans != 'ok':
                 print(ans)
                 return
-            if len(sys.argv) >= 5:
+            if len(sys.argv) >= 4:
                 if sys.argv[4] == 'window':
                     from window import main as fun
                 elif sys.argv[4] == 'screenshot':
@@ -45,7 +41,7 @@ def main():
                 else:
                     print('Error: not valid mod')
                     return
-                fun(frac, get_size_window(sys.argv), get_time(sys.argv))
+                fun(frac, get_size_window(sys.argv), sys.argv)
             else:
                 print('All ok')
         else:

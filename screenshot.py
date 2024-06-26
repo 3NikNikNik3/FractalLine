@@ -10,8 +10,20 @@ class Drawer:
         self.draw.line((s.x, s.y, e.x, e.y), color, r)
 
 
-def main(frac: Fractal, size, move: float):
-    move = int(move)
+def get_int(argv) -> int:
+    if len(argv) < 6 or not argv[5].isdigit():
+        return 0
+    return int(argv[5])
+
+
+def get_str(argv: list[str]) -> str:
+    if len(argv) < 7:
+        return 'result.png'
+    return argv[6]
+
+
+def main(frac: Fractal, size, arg: list[str]):
+    move = get_int(arg)
     for i in range(move):
         print(f'{i + 1}/{move}')
         frac.next(0)
@@ -21,5 +33,5 @@ def main(frac: Fractal, size, move: float):
     draw = ImageDraw.Draw(file)
     draw_ = Drawer(draw)
     frac.draw(draw_, 1)
-    file.save('result.png')
+    file.save(get_str(arg))
     print('all!')
