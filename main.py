@@ -2,10 +2,8 @@ import sys
 import os
 from engine import Fractal
 
-#https://moviepy.readthedocs.io/en/latest/getting_started/quick_presentation.html
 
-
-def get_size_window(argv):
+def get_size_window(argv) -> tuple[int, int]:
     if len(argv) < 4 or not argv[2].isdigit() or not argv[3].isdigit():
         return 1, 1
     return int(argv[2]), int(argv[3])
@@ -23,7 +21,9 @@ def main():
     mod: window - see fractal on every iter
             par:float(second move or 0)
          screenshot - make screenshot on <par> iter with name <name>
-            par:int name:str''')
+            par:int name:str
+         video - make video
+            path:str(path file) iter:int(count of iteration) second:float(second on one iteration) fps:int(count of frame on one second''')
         elif os.path.exists(sys.argv[1]):
             try:
                 ans = frac.load(sys.argv[1], get_size_window(sys.argv))
@@ -38,6 +38,8 @@ def main():
                     from window import main as fun
                 elif sys.argv[4] == 'screenshot':
                     from screenshot import main as fun
+                elif sys.argv[4] == 'video':
+                    from video import main as fun
                 else:
                     print('Error: not valid mod')
                     return

@@ -36,6 +36,9 @@ class Vector:
     def copy(self):
         return Vector(self.x, self.y)
 
+    def get_int_turtle(self):
+        return int(self.x), int(self.y)
+
 
 def get_s(s: Vector, e: Vector, a: Vector):
     l = ((e - s) % (a - s)) / (e - s).len()

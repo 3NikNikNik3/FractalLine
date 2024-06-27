@@ -2,6 +2,7 @@ from PIL import ImageDraw, Image
 from vec_math import Vector
 from engine import Fractal
 
+
 class Drawer:
     def __init__(self, draw: ImageDraw):
         self.draw = draw
