@@ -9,9 +9,7 @@
 
 ## Примеры
 
-<video width="400" height="400" controls>
-  <source src="https://github.com/3NikNikNik3/FractalLine/blob/main/example/ex1.mp4" type="video/mp4">
-</video>
+https://github.com/3NikNikNik3/FractalLine/assets/161970751/d80c84fc-cb24-4305-b868-78e329b1f671
 
 ```main.py setting/90ang.json 500 500 video example/ex1.mp4 6 1 60```
 
