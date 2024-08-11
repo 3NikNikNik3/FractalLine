@@ -62,3 +62,5 @@ In ```example/example.png``` beautiful)
 ```main.py setting/min.json 400 400 window 0.1```
 
 ```main.py setting/what2.json 400 400 screenshot 10 res.png```
+
+[Ru ReadMe](https://github.com/3NikNikNik3/FractalLine/blob/main/README_ru.md)
