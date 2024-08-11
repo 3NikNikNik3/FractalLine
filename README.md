@@ -1,13 +1,13 @@
 # FractalLine 
 ### Python 3.11
 
-## О мини-проекте
+## About the mini-project
 
-С его помощью можно сделать и посмотреть состоящий из линий фрактал.
+You can use it to make and view a fractal consisting of lines.
 
-Можно посмотреть фрактал в окне с анимацией перехода или сделать картинку или видео
+You can view a fractal in a window with a transition animation or make a picture or a video
 
-## Примеры
+## Examples
 
 https://github.com/3NikNikNik3/FractalLine/assets/161970751/d80c84fc-cb24-4305-b868-78e329b1f671
 
@@ -21,41 +21,41 @@ https://github.com/3NikNikNik3/FractalLine/assets/161970751/d80c84fc-cb24-4305-b
 
 ```main.py setting/spiral.json 400 400 window 0.5```
 
-## Об алгоритме построения
+## About the construction algorithm
 
-Изначально есть прямая. В каждую итерацию каждая прямая делится на несколько новых, и их концы перемещяются по правилу:
+Initially, there is a straight line. In each iteration, each straight line is divided into several new ones, and their ends move according to the rule:
 
-1) поворачиваем угол ходьбы (изначально как у прямой)
-2) идём на часть длины изначальной прямой
+1) turning the walking angle (initially as in the straight line)
+2) go to a part of the length of the original straight line
 
-## О настройках
+## About the settings
 
-Формат файла настроек - json, они хранятся в setting (не обязательно)
+The settings file format is JSON, they are in ```setting``` (optional)
 
-В ```setting/min.json``` показаны минимальные параметры, а в ```setting/max.json``` то же самое, но со всеми параметрами. В них можно ознакомится со структурой
+The ``setting/min.json`` shows the minimum parameters, and the ``setting/max.json`` shows the same thing, but with all parameters. You can get acquainted with the structure in them
 
-Список всех параметров:
+List of all parameters:
 
-- ```start``` и ```end``` - начальное положение прямой (0.0 - 1.0)
-- ```alg``` - алгоритм построения новых прямых, список объектов для каждой новой линии
-- ```alg/ang``` - угол поворота направления движения в углах
-- ```alg/len``` - длина прохода (в длине изначальной прямой)
-- ```r``` - ширина прямой отрисовки
-- ```color``` - цвет прямой (фон - \[255, 255, 255\])
-- ```auto_end``` - когда делятся прямые, добавить ли точку в конец прямой (закреплённую)
-- ```end_len``` - длина последней прямой (в доле от изначальной прямой) (используется при ```auto_end``` = true) (нужен для анимации)
+- ```start``` and ```end``` - initial position of a straight line (0.0 - 1.0)
+- ```alg``` - algorithm for constructing new lines, a list of objects for each new line
+- ```alg/ang``` - angle of rotation of the direction of movement in the corners
+- ```alg/len``` - length of the movement (in the length of the original straight line)
+- ```r``` - width of the straight line rendering
+- ```color``` - straight line's color  (the fon - \[255, 255, 255\])
+- ```auto_end``` - when straight lines are divided, should to add a point to the end of the straight line (fixed)
+- ```end_len``` - length of the last straight line (as a fraction of the original straight line) (used when ``auto_end`` = true) (needed for animation)
 
-## Как запустить
+## How to launch
 
-Через консоль (Linux, Window)
+Via the console (Linux, Window)
 
-Чтобы узнать как, введите ```main.py help``` ._.
+To find out how, enter ```main.py help``` ._.
 
-## Пару примеров
+## A couple of examples
 
-В setting находятся различные настройки, попробуйте :-)
+There are various settings in the ```setting```, try it :-)
 
-В example/example.png красивое)
+In ```example/example.png``` beautiful)
 
 ```main.py setting/max.json 400 400 window 1```
 
